@@ -30,7 +30,7 @@ export default function Home() {
 
       {/* Contact Us Section */}
       <section className="flex flex-col items-center justify-center p-6 bg-white text-black min-h-screen">
-        <h2 className="text-4xl font-bold mb-6">Let's Connect</h2>
+        <h2 className="text-4xl font-bold mb-6">Let&apos;s Connect</h2>
 
         <div className="flex flex-wrap justify-center gap-6">
           <PinContainer title="GitHub" href="https://github.com/D-Binara">
