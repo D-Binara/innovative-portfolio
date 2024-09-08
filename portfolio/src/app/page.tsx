@@ -1,35 +1,96 @@
+import { IconBrandGithub, IconBrandLinkedin, IconCode, IconHome, IconMail, IconUser } from "@tabler/icons-react";
 import { PinContainer } from "./components/3d-cards";
+import { FloatingDock } from "./components/floating-dock";
 import { SparklesPreview } from "./components/sparkles/sparkles_apply";
-import { TracingBeam } from "./components/tracingBeam";
+import { TextGenerateEffect } from "./components/about";
+import ProjectsSection from "./components/projectcard";
+
+
+const links = [
+  {
+    "title": "Home",
+    "icon": (
+      <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    "href": "#home"
+  },
+  {
+    "title": "About Me",
+    "icon": (
+      <IconUser className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    "href": "#about"
+  },
+  {
+    "title": "Projects",
+    "icon": (
+      <IconCode className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    "href": "#projects"
+  },
+  {
+    "title": "GitHub",
+    "icon": (
+      <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    "href": "#contact"
+  },
+  {
+    "title": "LinkedIn",
+    "icon": (
+      <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    "href": "#contact"
+  },
+  {
+    "title": "Contact",
+    "icon": (
+      <IconMail className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    "href": "#contact"
+  }
+];
+
 
 export default function Home() {
   return (
-    
+
     <main className="flex flex-col min-h-screen bg-black text-white">
       {/* Introduction Section */}
-      <section className="flex flex-col items-center justify-center p-6 bg-black text-white min-h-screen relative">
+      <section id="home" className="flex flex-col items-center justify-center p-6 bg-black text-white min-h-screen relative">
         <SparklesPreview />
         <div className="absolute inset-0 flex items-center justify-center">
           <p className="text-xl font-light text-gray-300 opacity-50">
             Tech Enthusiast | Software Developer | Passionate About Innovation
           </p>
         </div>
+        <FloatingDock
+          mobileClassName="translate-y-20" // only for demo, remove for production
+          items={links}
+        />
+
+      </section>
+
+
+      {/* About Section */}
+      <section id="about" className="flex flex-col items-center justify-center p-6 bg-white text-black min-h-screen">
+        <h2 className="text-4xl font-bold mb-6">About Me</h2>
+        <TextGenerateEffect words=' I am an undergraduate at Sabaragamuwa University of Sri Lanka, pursuing a BSc (Hons) in Computer and Information Systems. With a deep passion for the software industry, I am dedicated to developing innovative solutions that address real-world challenges. I am constantly expanding my knowledge and skills to contribute meaningfully to the tech landscape and aspire to make a lasting impact through creativity and technological advancement.' />
       </section>
 
       {/* Projects Section */}
-      <section className="flex flex-col items-center justify-center p-6 bg-white text-black min-h-screen">
-        <h2 className="text-4xl font-bold mb-6">Projects</h2>
-        {/* Add project content here */}
+      <section
+        id="projects"
+        className="flex flex-col items-center justify-center p-6 bg-black text-white min-h-screen"
+      >
+        <ProjectsSection></ProjectsSection>
       </section>
-
-      {/* Projects Section */}
-      <section className="flex flex-col items-center justify-center p-6 bg-black text-white min-h-screen">
+      {/* <section id="projects"className="flex flex-col items-center justify-center p-6 bg-black text-white min-h-screen">
         <h2 className="text-4xl font-bold mb-6">Projects</h2>
-        {/* Add project content here */}
-      </section>
+      </section> */}
 
       {/* Contact Us Section */}
-      <section className="flex flex-col items-center justify-center p-6 bg-white text-black min-h-screen">
+      <section id='contact' className="flex flex-col items-center justify-center p-6 bg-white text-black min-h-screen">
         <h2 className="text-4xl font-bold mb-6">Let&apos;s Connect</h2>
 
         <div className="flex flex-wrap justify-center gap-6">
