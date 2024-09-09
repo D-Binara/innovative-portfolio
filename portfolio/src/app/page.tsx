@@ -59,6 +59,7 @@ export default function Home() {
   return (
     <>
       <Head>
+        <meta name="google-site-verification" content="o2HXFlunKthkmZlEzQQ3iWt_XZBe3d9wNAN6RgifN5c" />
         <title>Binara Kaveesha | Tech Enthusiast & Software Developer</title>
         <meta name="description" content="Binara Kaveesha's personal portfolio website. Explore my projects, connect with me on LinkedIn and GitHub, and learn more about my work in software development." />
         <meta name="keywords" content="Binara Kaveesha, software developer, tech enthusiast, portfolio, LinkedIn, GitHub, innovation, computer science, software engineering" />
