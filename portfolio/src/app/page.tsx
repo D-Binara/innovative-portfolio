@@ -4,11 +4,13 @@ import { FloatingDock } from "./components/floating-dock";
 import { SparklesPreview } from "./components/sparkles/sparkles_apply";
 import { TextGenerateEffect } from "./components/about";
 import ProjectsSection from "./components/projectcard";
+import { Metadata } from 'next';
 
 
 const links = [
   {
     "title": "Home",
+    
     "icon": (
       <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
@@ -51,10 +53,24 @@ const links = [
   }
 ];
 
+export const metadata: Metadata = {
+  title: 'Binara Kaveesha - Portfolio',
+  description: 'Binara Kaveesha\'s portfolio website showcasing projects and skills in software development.',
+  keywords: 'Binara Kaveesha, software developer, portfolio, projects',
+  authors: [{ name: 'Binara Kaveesha' }],
+  openGraph: {
+    title: 'Binara Kaveesha - Portfolio',
+    description: 'Binara Kaveesha\'s portfolio website showcasing projects and skills in software development.',
+    images: ['/path-to-your-image.jpg'],
+    url: 'https://your-website.com',
+  },
+  icons: {
+    icon: '/favicon.ico',
+  },
+};
 
 export default function Home() {
   return (
-
     <main className="flex flex-col min-h-screen bg-black text-white">
       {/* Introduction Section */}
       <section id="home" className="flex flex-col items-center justify-center p-6 bg-black text-white min-h-screen relative">
