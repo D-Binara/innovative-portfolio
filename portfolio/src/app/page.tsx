@@ -8,8 +8,6 @@ import ProjectsSection from "./components/projectcard";
 import Head from 'next/head';
 import Image from 'next/image';
 
-
-
 const links = [
   {
     "title": "Home",
