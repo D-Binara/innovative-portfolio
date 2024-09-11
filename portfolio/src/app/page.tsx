@@ -5,7 +5,9 @@ import { FloatingDock } from "./components/floating-dock";
 import { SparklesPreview } from "./components/sparkles/sparkles_apply";
 import { TextGenerateEffect } from "./components/about";
 import ProjectsSection from "./components/projectcard";
-import Head from 'next/head'; 
+import Head from 'next/head';
+import Image from 'next/image';
+
 
 
 const links = [
@@ -66,6 +68,7 @@ export default function Home() {
         <meta name="author" content="Binara Kaveesha" />
         <link rel="canonical" href="https://your-domain.com" />
       </Head>
+
       <main className="flex flex-col min-h-screen bg-black text-white">
         {/* Introduction Section */}
         <section id="home" className="flex flex-col items-center justify-center p-6 bg-black text-white min-h-screen relative">
@@ -79,15 +82,31 @@ export default function Home() {
             mobileClassName="translate-y-20" // only for demo, remove for production
             items={links}
           />
-
         </section>
-
 
         {/* About Section */}
-        <section id="about" className="flex flex-col items-center justify-center p-6 bg-white text-black min-h-screen">
-          <h2 className="text-4xl font-bold mb-6">About Me</h2>
+        <section id="about" className="flex flex-col items-center justify-center p-8 bg-white text-black min-h-screen">
+          <h2 className="text-5xl font-extrabold mb-8">About Me</h2>
+
+          {/* Profile Image with GitHub Avatar */}
+          <div className="relative mb-8 group">
+            {/* Glowing Border Effect */}
+            <div className="absolute inset-0 w-64 h-64 lg:w-72 lg:h-72 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-1"></div>
+
+            {/* GitHub Profile Image */}
+            <Image
+              src="https://github.com/D-Binara.png"  // Replace with your GitHub username
+              alt="GitHub Profile Picture"
+              width={300}
+              height={300}
+              className="relative z-10 w-64 h-64 lg:w-72 lg:h-72 rounded-full object-cover shadow-2xl transition-transform transform group-hover:scale-105 duration-300 ease-in-out"
+            />
+          </div>
+
           <TextGenerateEffect words=' I am an undergraduate at Sabaragamuwa University of Sri Lanka, pursuing a BSc (Hons) in Computer and Information Systems. With a deep passion for the software industry, I am dedicated to developing innovative solutions that address real-world challenges. I am constantly expanding my knowledge and skills to contribute meaningfully to the tech landscape and aspire to make a lasting impact through creativity and technological advancement.' />
         </section>
+
+
 
         {/* Projects Section */}
         <section
@@ -103,7 +122,6 @@ export default function Home() {
         {/* Contact Us Section */}
         <section id='contact' className="flex flex-col items-center justify-center p-6 bg-white text-black min-h-screen">
           <h2 className="text-4xl font-bold mb-6">Let&apos;s Connect</h2>
-
           <div className="flex flex-wrap justify-center gap-6">
             <PinContainer title="GitHub" href="https://github.com/D-Binara">
               <div className="flex flex-col justify-center items-center p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]">
