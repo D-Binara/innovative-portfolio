@@ -70,7 +70,19 @@ const projects = [
             "LakruwanKavinda",
             "Dileesha-Lakshan07"
         ]
-    }
+    },
+    {
+        title: "AgriZone",
+        description: "AgriZone, an innovative solution for modern-day farming! With features that empower farmers to make data-driven decisions and connect to valuable resources, AgriZone brings the power of technology right to the field.",
+        frontend: "https://github.com/D-Binara/iwb102-team-novices",
+        backend: "https://github.com/D-Binara/iwb102-team-novices",
+        contributors: [
+            "D-Binara",
+            "LakshanShalintha",
+            "DeepikaRajapaksha",
+            "HarshaniYaparathne"
+        ]
+    },
 ];
 
 export default function ProjectsSection() {
