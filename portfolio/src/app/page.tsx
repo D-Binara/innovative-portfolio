@@ -60,11 +60,15 @@ export default function Home() {
     <>
       <Head>
         <title>Binara Kaveesha | Tech Enthusiast & Software Developer</title>
-        <meta name="description" content="Binara Kaveesha's personal portfolio website. Explore my projects, connect with me on LinkedIn and GitHub, and learn more about my work in software development." />
-        <meta name="keywords" content="Binara Kaveesha, software developer, tech enthusiast, portfolio, LinkedIn, GitHub, innovation, computer science, software engineering" />
-        <meta name="robots" content="index, follow" />
-        <meta name="author" content="Binara Kaveesha" />
-        <link rel="canonical" href="https://your-domain.com" />
+        <meta name="description"
+              content="Binara Kaveesha's personal portfolio website. Explore my projects, connect with me on LinkedIn and GitHub, and learn more about my work in software development."/>
+        <meta name="keywords"
+              content="Binara Kaveesha, software developer, tech enthusiast, portfolio, LinkedIn, GitHub, innovation, computer science, software engineering"/>
+        <meta name="robots" content="index, follow"/>
+        <meta name="author" content="Binara Kaveesha"/>
+        <link rel="canonical" href="https://your-domain.com"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
       </Head>
 
       <main className="flex flex-col min-h-screen bg-black text-white">
@@ -104,7 +108,28 @@ export default function Home() {
           <TextGenerateEffect words=' I am an undergraduate at Sabaragamuwa University of Sri Lanka, pursuing a BSc (Hons) in Computer and Information Systems. With a deep passion for the software industry, I am dedicated to developing innovative solutions that address real-world challenges. I am constantly expanding my knowledge and skills to contribute meaningfully to the tech landscape and aspire to make a lasting impact through creativity and technological advancement.' />
         </section>
 
+        {/* Achievements Section */}
+        <section id="achievements" className="flex flex-col items-center justify-center p-8 bg-gray-100 text-black min-h-screen">
+          <h2 className="text-4xl font-bold mb-6">Achievements</h2>
+          <div className="flex flex-col items-start space-y-4 max-w-xl">
 
+            {/* Achievement 1 */}
+            <div className="flex items-center space-x-3">
+              <img src="/ac.png" alt="Award Icon" className="w-10 h-10" />
+              <div>
+                <p className="text-lg font-medium">
+                  🎉 Celebrating Team Zyndicate’s Success! 🥉 - 2nd Runner-Up & Best Team Collaboration at Data Odyssey 2024! 🎊
+                </p>
+                <p className="text-gray-700">
+                  Thrilled to announce that Team Zyndicate from Sabaragamuwa University achieved the 2nd Runner-Up position and the prestigious Best Team Collaboration award at Data Odyssey 2024. Proud of the dedication and creativity of my incredible teammates!
+                </p>
+                <p className="text-sm text-gray-600 mt-2">
+                  <strong>Team Members:</strong> Binara Kaveesha, Pinil Dissanayaka, Heshan Navindu, Vishwa Wijesakare.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Projects Section */}
         <section
