@@ -123,8 +123,8 @@ export default function Home() {
 
             {/* Use AchievementCard component */}
             <AchievementCard
-                iconSrc="/ac.png"
-                title="🎉 Celebrating Team Zyndicate’s Success! 🥉 - 2nd Runner-Up & Best Team Collaboration at Data Odyssey 2024! 🎊"
+                iconSrc="/ac.jpeg"
+                title="Celebrating Team Zyndicate’s Success! - 2nd Runner-Up & Best Team Collaboration at Data Odyssey 2024!"
                 description="Thrilled to announce that Team Zyndicate from Sabaragamuwa University achieved the 2nd Runner-Up position and the prestigious Best Team Collaboration award at Data Odyssey 2024. Proud of the dedication and creativity of my incredible teammates!"
                 teamMembers={["Binara Kaveesha", "Pinil Dissanayaka", "Heshan Navindu", "Vishwa Wijesakare"]}
             />

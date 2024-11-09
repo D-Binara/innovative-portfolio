@@ -9,14 +9,23 @@ interface AchievementCardProps {
 
 const AchievementCard: React.FC<AchievementCardProps> = ({ iconSrc, title, description, teamMembers }) => {
     return (
-        <div className="flex items-center space-x-3">
-            <img src={iconSrc} alt="Award Icon" className="w-10 h-10" />
-            <div>
-                <p className="text-lg font-medium">{title}</p>
-                <p className="text-gray-700">{description}</p>
+        <div
+            className="max-w-md bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+            {/* Image Section */}
+            <img
+                src={iconSrc}
+                alt="Post Image"
+                className="w-full h-48 object-cover"
+            />
+
+            {/* Content Section */}
+            <div className="p-5">
+                <h2 className="text-2xl font-bold text-gray-800 mb-2">{title}</h2>
+                <p className="text-gray-600 text-sm mb-4">{description}</p>
                 {teamMembers && (
-                    <p className="text-sm text-gray-600 mt-2">
-                        <strong>Team Members:</strong> {teamMembers.join(', ')}
+                    <p className="text-sm text-gray-500 mt-2">
+                        <strong className="font-semibold text-gray-700">Team Members:</strong>{' '}
+                        {teamMembers.join(', ')}
                     </p>
                 )}
             </div>

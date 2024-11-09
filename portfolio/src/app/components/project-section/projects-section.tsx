@@ -116,22 +116,6 @@ export default function ProjectsSection() {
                             </Link>
                         </div>
 
-                        {/*/!* Contributors Section *!/*/}
-                        {/*<div className="flex -space-x-2">*/}
-                        {/*    {project.contributors.map((contributor, idx) => (*/}
-                        {/*        <Link key={idx} href={`https://github.com/${contributor}`} legacyBehavior>*/}
-                        {/*            <a target="_blank" className="inline-block">*/}
-                        {/*                /!* eslint-disable-next-line @next/next/no-img-element *!/*/}
-                        {/*                <img*/}
-                        {/*                    src={`https://github.com/${contributor}.png?size=40`}*/}
-                        {/*                    alt={`${contributor}'s GitHub profile`}*/}
-                        {/*                    className="w-10 h-10 rounded-full border-2 border-gray-700"*/}
-                        {/*                />*/}
-                        {/*            </a>*/}
-                        {/*        </Link>*/}
-                        {/*    ))}*/}
-                        {/*</div>*/}
-
                         {/* Contributors Section */}
                         <div className="flex -space-x-2">
                             <AnimatedTooltip
