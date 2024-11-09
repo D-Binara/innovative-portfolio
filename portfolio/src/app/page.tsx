@@ -1,14 +1,13 @@
 'use client'
 import { IconBrandGithub, IconBrandLinkedin, IconCode, IconHome, IconMail, IconUser } from "@tabler/icons-react";
-import { PinContainer } from "./components/3d-cards";
+import { PinContainer } from "./components/contact-us-section/pin-container";
 import { FloatingDock } from "./components/introduction_section/floating-dock";
 import { SparklesPreview } from "@/app/components/introduction_section/sparkles/sparkles_apply";
-import { TextGenerateEffect } from "./components/about";
-import ProjectsSection from "./components/projectcard";
+import { TextGenerateEffect } from "./components/about_section/text-generate-effect";
+import ProjectsSection from "./components/project-section/projects-section";
 import Head from 'next/head';
 import Image from 'next/image';
-import AchievementCard from "@/app/components/achievement_cards";
-import {AnimatedTooltip} from "@/app/components/animated-tooltip";
+import AchievementCard from "@/app/components/achievements-section/achievement_cards";
 
 const links = [
   {
@@ -99,15 +98,14 @@ export default function Home() {
             <Image
               src="https://github.com/D-Binara.png"
               alt="GitHub Profile Picture"
-              width={300}
-              height={300}
+              width={200}
+              height={200}
               className="relative z-10 w-64 h-64 lg:w-72 lg:h-72 rounded-full object-cover shadow-2xl transition-transform transform group-hover:scale-105 duration-300 ease-in-out"
             />
           </div>
           <TextGenerateEffect words=' I am an undergraduate at Sabaragamuwa University of Sri Lanka, pursuing a BSc (Hons) in Computer and Information Systems. With a deep passion for the software industry, I am dedicated to developing innovative solutions that address real-world challenges. I am constantly expanding my knowledge and skills to contribute meaningfully to the tech landscape and aspire to make a lasting impact through creativity and technological advancement.' />
         </section>
-
-
+        {/* End About Section */}
 
         {/* Projects Section */}
         <section
@@ -116,6 +114,7 @@ export default function Home() {
         >
           <ProjectsSection></ProjectsSection>
         </section>
+        {/* End Projects Section */}
 
         {/* Achievements Section */}
         <section id="achievements" className="flex flex-col items-center justify-center p-8 bg-white text-black min-h-screen">
@@ -129,14 +128,15 @@ export default function Home() {
                 description="Thrilled to announce that Team Zyndicate from Sabaragamuwa University achieved the 2nd Runner-Up position and the prestigious Best Team Collaboration award at Data Odyssey 2024. Proud of the dedication and creativity of my incredible teammates!"
                 teamMembers={["Binara Kaveesha", "Pinil Dissanayaka", "Heshan Navindu", "Vishwa Wijesakare"]}
             />
-
           </div>
         </section>
+        {/*End Achievements Section*/}
 
         {/* Memoirs  Section */}
         <section id="achievements" className="flex flex-col items-center justify-center p-8 bg-black text-white min-h-screen">
           <h2 className="text-4xl font-bold mb-6">Memoirs</h2>
         </section>
+        {/* End Memoirs  Section */}
 
         {/* Contact Us Section */}
         <section id='contact' className="flex flex-col items-center justify-center p-6 bg-white text-black min-h-screen">
@@ -155,7 +155,6 @@ export default function Home() {
                 />
               </div>
             </PinContainer>
-
             <PinContainer title="LinkedIn" href="https://www.linkedin.com/in/binara-kaveesha-weerasekara-600497271">
               <div className="flex flex-col justify-center items-center p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]">
                 <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-slate-100 text-center">
@@ -184,6 +183,8 @@ export default function Home() {
             </PinContainer>
           </div>
         </section>
+        {/*End Contact Us Section */}
+
       </main>
     </>
   );

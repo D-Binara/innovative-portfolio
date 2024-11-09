@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
+import {AnimatedTooltip} from "@/app/components/project-section/animated-tooltip";
 
 const projects = [
     {
@@ -10,12 +11,11 @@ const projects = [
         frontend: "https://github.com/HeshanNavindu-7/AgriConnect_mobile_app",
         backend: "https://github.com/D-Binara/Agri_Connect_laravel_BackEnd-",
         contributors: [
-            "D-Binara",
-            "pinilDissanayaka",
-            "HeshanNavindu-7",
-            "Denuwan-Kalubowila",
-            "Vishwa0416"
-
+            { id: 1, name: "D-Binara" },
+            { id: 2, name: "pinilDissanayaka" },
+            { id: 3, name: "HeshanNavindu-7" },
+            { id: 4, name: "Denuwan-Kalubowila" },
+            { id: 5, name: "Vishwa0416" },
         ]
     },
     {
@@ -24,10 +24,10 @@ const projects = [
         frontend: "https://github.com/HeshanNavindu-7/MedAssist-frontend",
         backend: "https://github.com/Denuwan-Kalubowila/MedAssist-be",
         contributors: [
-            "D-Binara",
-            "HeshanNavindu-7",
-            "Denuwan-Kalubowila",
-            "Vishwa0416"
+            { id: 1, name: "D-Binara" },
+            { id: 2, name: "Vishwa0416" },
+            { id: 3, name: "HeshanNavindu-7" },
+            { id: 4, name: "Denuwan-Kalubowila" },
         ]
     },
     {
@@ -36,11 +36,11 @@ const projects = [
         frontend: "https://github.com/pinilDissanayaka/Glova-Application-using-Flutter/tree/main/Front-End",
         backend: "https://github.com/pinilDissanayaka/Glova-Application-using-Flutter/tree/main/Back-End",
         contributors: [
-            "D-Binara",
-            "HeshanNavindu-7",
-            "Denuwan-Kalubowila",
-            "pinilDissanayaka",
-            "Vishwa0416"
+            { id: 1, name: "D-Binara" },
+            { id: 2, name: "pinilDissanayaka" },
+            { id: 3, name: "HeshanNavindu-7" },
+            { id: 4, name: "Denuwan-Kalubowila" },
+            { id: 5, name: "Vishwa0416" },
         ]
     },
     {
@@ -49,11 +49,11 @@ const projects = [
         frontend: "https://github.com/GihanSVND/SOCS-Website-Front_end",
         backend: "https://github.com/GihanSVND/SOCS-Website-Front_end",
         contributors: [
-            "D-Binara",
-            "GihanSVND",
-            "LakshanShalintha",
-            "HarshaniYaparathne",
-            "nethhari"
+            { id: 1, name: "D-Binara" },
+            { id: 2, name: "GihanSVND" },
+            { id: 3, name: "LakshanShalintha" },
+            { id: 4, name: "HarshaniYaparathne" },
+            { id: 5, name: "nethhari" },
         ]
     },
     {
@@ -62,13 +62,13 @@ const projects = [
         frontend: "https://github.com/D-Binara/PHP-Web-Project",
         backend: "https://github.com/D-Binara/PHP-Web-Project",
         contributors: [
-            "D-Binara",
-            "HeshanNavindu-7",
-            "Denuwan-Kalubowila",
-            "GihanSVND",
-            "LakshanShalintha",
-            "LakruwanKavinda",
-            "Dileesha-Lakshan07"
+            { id: 1, name: "D-Binara" },
+            { id: 2, name: "GihanSVND" },
+            { id: 3, name: "HeshanNavindu-7" },
+            { id: 4, name: "Denuwan-Kalubowila" },
+            { id: 5, name: "LakshanShalintha" },
+            { id: 6, name: "LakruwanKavinda" },
+            { id: 7, name: "Dileesha-Lakshan07" },
         ]
     },
     {
@@ -77,10 +77,10 @@ const projects = [
         frontend: "https://github.com/D-Binara/iwb102-team-novices",
         backend: "https://github.com/D-Binara/iwb102-team-novices",
         contributors: [
-            "D-Binara",
-            "LakshanShalintha",
-            "DeepikaRajapaksha",
-            "HarshaniYaparathne"
+            { id: 1, name: "D-Binara" },
+            { id: 2, name: "LakshanShalintha" },
+            { id: 3, name: "DeepikaRajapaksha" },
+            { id: 4, name: "HarshaniYaparathne" },
         ]
     },
 ];
@@ -116,20 +116,31 @@ export default function ProjectsSection() {
                             </Link>
                         </div>
 
+                        {/*/!* Contributors Section *!/*/}
+                        {/*<div className="flex -space-x-2">*/}
+                        {/*    {project.contributors.map((contributor, idx) => (*/}
+                        {/*        <Link key={idx} href={`https://github.com/${contributor}`} legacyBehavior>*/}
+                        {/*            <a target="_blank" className="inline-block">*/}
+                        {/*                /!* eslint-disable-next-line @next/next/no-img-element *!/*/}
+                        {/*                <img*/}
+                        {/*                    src={`https://github.com/${contributor}.png?size=40`}*/}
+                        {/*                    alt={`${contributor}'s GitHub profile`}*/}
+                        {/*                    className="w-10 h-10 rounded-full border-2 border-gray-700"*/}
+                        {/*                />*/}
+                        {/*            </a>*/}
+                        {/*        </Link>*/}
+                        {/*    ))}*/}
+                        {/*</div>*/}
+
                         {/* Contributors Section */}
                         <div className="flex -space-x-2">
-                            {project.contributors.map((contributor, idx) => (
-                                <Link key={idx} href={`https://github.com/${contributor}`} legacyBehavior>
-                                    <a target="_blank" className="inline-block">
-                                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                                        <img
-                                            src={`https://github.com/${contributor}.png?size=40`}
-                                            alt={`${contributor}'s GitHub profile`}
-                                            className="w-10 h-10 rounded-full border-2 border-gray-700"
-                                        />
-                                    </a>
-                                </Link>
-                            ))}
+                            <AnimatedTooltip
+                                items={project.contributors.map((contributor) => ({
+                                    id: contributor.id,
+                                    name: contributor.name,
+                                    image: `https://github.com/${contributor.name}.png?size=40`
+                                }))}
+                            />
                         </div>
                     </motion.div>
                 ))}
