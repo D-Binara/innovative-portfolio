@@ -1,12 +1,14 @@
 'use client'
 import { IconBrandGithub, IconBrandLinkedin, IconCode, IconHome, IconMail, IconUser } from "@tabler/icons-react";
 import { PinContainer } from "./components/3d-cards";
-import { FloatingDock } from "./components/floating-dock";
-import { SparklesPreview } from "./components/sparkles/sparkles_apply";
+import { FloatingDock } from "./components/introduction_section/floating-dock";
+import { SparklesPreview } from "@/app/components/introduction_section/sparkles/sparkles_apply";
 import { TextGenerateEffect } from "./components/about";
 import ProjectsSection from "./components/projectcard";
 import Head from 'next/head';
 import Image from 'next/image';
+import AchievementCard from "@/app/components/achievement_cards";
+import {AnimatedTooltip} from "@/app/components/animated-tooltip";
 
 const links = [
   {
@@ -68,10 +70,10 @@ export default function Home() {
         <meta name="author" content="Binara Kaveesha"/>
         <link rel="canonical" href="https://your-domain.com"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
       </Head>
 
       <main className="flex flex-col min-h-screen bg-black text-white">
+
         {/* Introduction Section */}
         <section id="home" className="flex flex-col items-center justify-center p-6 bg-black text-white min-h-screen relative">
           <SparklesPreview />
@@ -94,42 +96,18 @@ export default function Home() {
           <div className="relative mb-8 group">
             {/* Glowing Border Effect */}
             <div className="absolute inset-0 w-64 h-64 lg:w-72 lg:h-72 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-1"></div>
-
-            {/* GitHub Profile Image */}
             <Image
-              src="https://github.com/D-Binara.png"  // Replace with your GitHub username
+              src="https://github.com/D-Binara.png"
               alt="GitHub Profile Picture"
               width={300}
               height={300}
               className="relative z-10 w-64 h-64 lg:w-72 lg:h-72 rounded-full object-cover shadow-2xl transition-transform transform group-hover:scale-105 duration-300 ease-in-out"
             />
           </div>
-
           <TextGenerateEffect words=' I am an undergraduate at Sabaragamuwa University of Sri Lanka, pursuing a BSc (Hons) in Computer and Information Systems. With a deep passion for the software industry, I am dedicated to developing innovative solutions that address real-world challenges. I am constantly expanding my knowledge and skills to contribute meaningfully to the tech landscape and aspire to make a lasting impact through creativity and technological advancement.' />
         </section>
 
-        {/* Achievements Section */}
-        <section id="achievements" className="flex flex-col items-center justify-center p-8 bg-gray-100 text-black min-h-screen">
-          <h2 className="text-4xl font-bold mb-6">Achievements</h2>
-          <div className="flex flex-col items-start space-y-4 max-w-xl">
 
-            {/* Achievement 1 */}
-            <div className="flex items-center space-x-3">
-              <img src="/ac.png" alt="Award Icon" className="w-10 h-10" />
-              <div>
-                <p className="text-lg font-medium">
-                  🎉 Celebrating Team Zyndicate’s Success! 🥉 - 2nd Runner-Up & Best Team Collaboration at Data Odyssey 2024! 🎊
-                </p>
-                <p className="text-gray-700">
-                  Thrilled to announce that Team Zyndicate from Sabaragamuwa University achieved the 2nd Runner-Up position and the prestigious Best Team Collaboration award at Data Odyssey 2024. Proud of the dedication and creativity of my incredible teammates!
-                </p>
-                <p className="text-sm text-gray-600 mt-2">
-                  <strong>Team Members:</strong> Binara Kaveesha, Pinil Dissanayaka, Heshan Navindu, Vishwa Wijesakare.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Projects Section */}
         <section
@@ -138,9 +116,27 @@ export default function Home() {
         >
           <ProjectsSection></ProjectsSection>
         </section>
-        {/* <section id="projects"className="flex flex-col items-center justify-center p-6 bg-black text-white min-h-screen">
-        <h2 className="text-4xl font-bold mb-6">Projects</h2>
-      </section> */}
+
+        {/* Achievements Section */}
+        <section id="achievements" className="flex flex-col items-center justify-center p-8 bg-white text-black min-h-screen">
+          <h2 className="text-4xl font-bold mb-6">Achievements</h2>
+          <div className="flex flex-col items-start space-y-4 max-w-xl">
+
+            {/* Use AchievementCard component */}
+            <AchievementCard
+                iconSrc="/ac.png"
+                title="🎉 Celebrating Team Zyndicate’s Success! 🥉 - 2nd Runner-Up & Best Team Collaboration at Data Odyssey 2024! 🎊"
+                description="Thrilled to announce that Team Zyndicate from Sabaragamuwa University achieved the 2nd Runner-Up position and the prestigious Best Team Collaboration award at Data Odyssey 2024. Proud of the dedication and creativity of my incredible teammates!"
+                teamMembers={["Binara Kaveesha", "Pinil Dissanayaka", "Heshan Navindu", "Vishwa Wijesakare"]}
+            />
+
+          </div>
+        </section>
+
+        {/* Memoirs  Section */}
+        <section id="achievements" className="flex flex-col items-center justify-center p-8 bg-black text-white min-h-screen">
+          <h2 className="text-4xl font-bold mb-6">Memoirs</h2>
+        </section>
 
         {/* Contact Us Section */}
         <section id='contact' className="flex flex-col items-center justify-center p-6 bg-white text-black min-h-screen">
@@ -151,6 +147,7 @@ export default function Home() {
                 <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-slate-100 text-center">
                   Explore My GitHub Projects
                 </h3>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
                   alt="GitHub Logo"
@@ -164,6 +161,7 @@ export default function Home() {
                 <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-slate-100 text-center">
                   Connect with Me on LinkedIn
                 </h3>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
                   alt="LinkedIn Logo"
@@ -171,12 +169,12 @@ export default function Home() {
                 />
               </div>
             </PinContainer>
-
             <PinContainer title="Email" href="mailto:dbkaveesha@gmail.com">
               <div className="flex flex-col justify-center items-center p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]">
                 <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-slate-100 text-center">
                   Contact Me via Email
                 </h3>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
                   alt="Email Icon"

@@ -121,6 +121,7 @@ export default function ProjectsSection() {
                             {project.contributors.map((contributor, idx) => (
                                 <Link key={idx} href={`https://github.com/${contributor}`} legacyBehavior>
                                     <a target="_blank" className="inline-block">
+                                        {/* eslint-disable-next-line @next/next/no-img-element */}
                                         <img
                                             src={`https://github.com/${contributor}.png?size=40`}
                                             alt={`${contributor}'s GitHub profile`}
