@@ -8,14 +8,14 @@ export function Memories() {
                 "Participated in ACES Coders 11.0 with Dev NinjaZ—an intense 12-hour coding challenge at the University of Peradeniya. Proud of our teamwork and growth! ",
             name: "Michael RodriguezACES Coders 11.0",
             designation: "ACES Coders 11.0",
-            src: "/coders.jpg",
+            src: "/memories/coders.jpg",
         },
         {
             quote:
                 "Proud to have contributed to the SUSL Hall Reservation System! This platform has made event planning smoother and more efficient—excited to see its impact on campus!",
             name: " ",
             designation: "Proud Contribution to SUSL's New Hall Reservation System 🎉",
-            src: "/hall_booking.jpg",
+            src: "/memories/hall_booking.jpg",
         },
         {
             quote:

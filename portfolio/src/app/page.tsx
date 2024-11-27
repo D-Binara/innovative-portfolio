@@ -1,7 +1,5 @@
 'use client'
-import {IconBrandGithub, IconBrandLinkedin, IconCode, IconHome, IconMail, IconUser} from "@tabler/icons-react";
 import {PinContainer} from "./components/contact-us-section/pin-container";
-import {FloatingDock} from "./components/introduction_section/floating-dock";
 import {SparklesPreview} from "@/app/components/introduction_section/sparkles/sparkles_apply";
 import {TextGenerateEffect} from "./components/about_section/text-generate-effect";
 import ProjectsSection from "./components/project-section/projects-section";
@@ -9,52 +7,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import AchievementCard from "@/app/components/achievements-section/achievement_cards";
 import {Memories} from "@/app/components/memoirs-section/memories";
-
-const links = [
-    {
-        "title": "Home",
-
-        "icon": (
-            <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
-        ),
-        "href": "#home"
-    },
-    {
-        "title": "About Me",
-        "icon": (
-            <IconUser className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
-        ),
-        "href": "#about"
-    },
-    {
-        "title": "Projects",
-        "icon": (
-            <IconCode className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
-        ),
-        "href": "#projects"
-    },
-    {
-        "title": "GitHub",
-        "icon": (
-            <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
-        ),
-        "href": "#contact"
-    },
-    {
-        "title": "LinkedIn",
-        "icon": (
-            <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
-        ),
-        "href": "#contact"
-    },
-    {
-        "title": "Contact",
-        "icon": (
-            <IconMail className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
-        ),
-        "href": "#contact"
-    }
-];
+import {NavBar} from "@/app/components/introduction_section/nav-bar";
 
 
 export default function Home() {
@@ -83,29 +36,26 @@ export default function Home() {
                             Tech Enthusiast | Software Developer | Passionate About Innovation
                         </p>
                     </div>
-                    <FloatingDock
-                        mobileClassName="translate-y-20" // only for demo, remove for production
-                        items={links}
-                    />
+                    <NavBar></NavBar>
                 </section>
 
                 {/* About Section */}
                 <section id="about"
                          className="flex flex-col items-center justify-center p-8 bg-white text-black min-h-screen">
                     <h2 className="text-5xl font-extrabold mb-8">About Me</h2>
-                        {/* Profile Image with GitHub Avatar */}
-                        <div className="relative mb-8 group">
-                            {/* Glowing Border Effect */}
-                            <div
-                                className="absolute inset-0 w-64 h-64 lg:w-72 lg:h-72 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-1"></div>
-                            <Image
-                                src="https://github.com/D-Binara.png"
-                                alt="GitHub Profile Picture"
-                                width={200}
-                                height={200}
-                                className="relative z-10 w-64 h-64 lg:w-72 lg:h-72 rounded-full object-cover shadow-2xl transition-transform transform group-hover:scale-105 duration-300 ease-in-out"
-                            />
-                        </div>
+                    {/* Profile Image with GitHub Avatar */}
+                    <div className="relative mb-8 group">
+                        {/* Glowing Border Effect */}
+                        <div
+                            className="absolute inset-0 w-64 h-64 lg:w-72 lg:h-72 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-1"></div>
+                        <Image
+                            src="https://github.com/D-Binara.png"
+                            alt="GitHub Profile Picture"
+                            width={200}
+                            height={200}
+                            className="relative z-10 w-64 h-64 lg:w-72 lg:h-72 rounded-full object-cover shadow-2xl transition-transform transform group-hover:scale-105 duration-300 ease-in-out"
+                        />
+                    </div>
                     <TextGenerateEffect
                         words=' I am an undergraduate at Sabaragamuwa University of Sri Lanka, pursuing a BSc (Hons) in Computer and Information Systems. With a deep passion for the software industry, I am dedicated to developing innovative solutions that address real-world challenges. I am constantly expanding my knowledge and skills to contribute meaningfully to the tech landscape and aspire to make a lasting impact through creativity and technological advancement.'/>
 
@@ -139,7 +89,7 @@ export default function Home() {
                 {/*End Achievements Section*/}
 
                 {/* Memoirs  Section */}
-                <section id="achievements"
+                <section id="memoirs"
                          className="flex flex-col items-center justify-center p-8 bg-black text-white min-h-screen">
                     <h2 className="text-4xl font-bold mb-6">Memoirs</h2>
                     <Memories></Memories>
@@ -150,7 +100,7 @@ export default function Home() {
                 <section id='contact'
                          className="flex flex-col items-center justify-center p-6 bg-white text-black min-h-screen">
                     <h2 className="text-4xl font-bold mb-6">Let&apos;s Connect</h2>
-                    <div className="flex flex-wrap justify-center gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-10">
                         <PinContainer title="GitHub" href="https://github.com/D-Binara">
                             <div
                                 className="flex flex-col justify-center items-center p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]">
@@ -194,6 +144,35 @@ export default function Home() {
                                 />
                             </div>
                         </PinContainer>
+                        {/*<PinContainer title="Stack Overflow"*/}
+                        {/*              href="https://stackoverflow.com/users/YOUR-STACKOVERFLOW-ID">*/}
+                        {/*    <div*/}
+                        {/*        className="flex flex-col justify-center items-center p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]">*/}
+                        {/*        <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-slate-100 text-center">*/}
+                        {/*            Ask Questions or View My Contributions on Stack Overflow*/}
+                        {/*        </h3>*/}
+                        {/*        /!* eslint-disable-next-line @next/next/no-img-element *!/*/}
+                        {/*        <img*/}
+                        {/*            src="https://cdn-icons-png.flaticon.com/512/2111/2111628.png"*/}
+                        {/*            alt="Stack Overflow Logo"*/}
+                        {/*            className="w-40 h-40 mt-4"*/}
+                        {/*        />*/}
+                        {/*    </div>*/}
+                        {/*</PinContainer>*/}
+                        {/*<PinContainer title="Medium" href="https://medium.com/@YOUR-MEDIUM-USERNAME">*/}
+                        {/*    <div*/}
+                        {/*        className="flex flex-col justify-center items-center p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]">*/}
+                        {/*        <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-slate-100 text-center">*/}
+                        {/*            Read My Articles on Medium*/}
+                        {/*        </h3>*/}
+                        {/*        /!* eslint-disable-next-line @next/next/no-img-element *!/*/}
+                        {/*        <img*/}
+                        {/*            src="https://cdn-icons-png.flaticon.com/512/5968/5968906.png"*/}
+                        {/*            alt="Medium Logo"*/}
+                        {/*            className="w-40 h-40 mt-4"*/}
+                        {/*        />*/}
+                        {/*    </div>*/}
+                        {/*</PinContainer>*/}
                     </div>
                 </section>
                 {/*End Contact Us Section */}
