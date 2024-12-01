@@ -75,14 +75,20 @@ export default function Home() {
                 <section id="achievements"
                          className="flex flex-col items-center justify-center p-8 bg-white text-black min-h-screen">
                     <h2 className="text-4xl font-bold mb-6">Achievements</h2>
-                    <div className="flex flex-col items-start space-y-4 max-w-xl">
+                    <div className="flex flex-row flex-wrap items-start justify-center space-x-4 max-w-5xl">
 
                         {/* Use AchievementCard component */}
                         <AchievementCard
-                            iconSrc="/ac.jpeg"
-                            title="Celebrating Team Zyndicate’s Success! - 2nd Runner-Up & Best Team Collaboration at Data Odyssey 2024!"
+                            iconSrc="/achievements/ac.jpeg"
+                            title="Celebrating Team Zyndicate’s Success at Data Odyssey 2024!"
                             description="Thrilled to announce that Team Zyndicate from Sabaragamuwa University achieved the 2nd Runner-Up position and the prestigious Best Team Collaboration award at Data Odyssey 2024. Proud of the dedication and creativity of my incredible teammates!"
                             teamMembers={["Binara Kaveesha", "Pinil Dissanayaka", "Heshan Navindu", "Vishwa Wijesakare"]}
+                        />
+                        <AchievementCard
+                            iconSrc="/achievements/tedhack.jpg"
+                            title="Team Zyndicate Shines at TADHack 2023!"
+                            description="Excited to share that Team Zyndicate from Sabaragamuwa University emerged as the 1st Runner-Up at TADHack 2023! This milestone was made possible through the unwavering dedication of our team and the incredible support from our university."
+                            teamMembers={["Binara Kaveesha", "Pinil Dissanayaka", "Heshan Navindu", "Vishwa Wijesakare","Denuwan Kalubowila"]}
                         />
                     </div>
                 </section>
